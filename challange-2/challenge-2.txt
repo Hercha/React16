@@ -1,0 +1,11 @@
+1. Create an input field(in App component) with a change listener wich outputs the length
+of the entered text below(e.g in a paragraph).
+2. Create a new component(=> ValidationComponent) which recieves the text as a prop.
+3. Inside the ValidationComponent either output "Text too short" or "Text long enought"
+depending on the text length(e.g take 5 as a minium length)
+4 Create another component(=> CharComponent) and style it as an inline box (=> display:inline-block),
+padding: 16px, text-align:center, margin: 16px, border: 1px solid black).
+5 Render a list of CharComponent, it should be removed from the entered text.
+6 When you click a CharComponent, it should removed from the entered text.
+
+Hint: Keep in mind that JavaScript are basically arrays!
