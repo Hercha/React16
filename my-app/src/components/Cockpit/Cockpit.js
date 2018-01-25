@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 
 import classes from './Cockpit.css';
-//import Aux from '../../hoc/Aux';
+//import Auox from '../../hoc/Auox';
 
 const cockpit = ( props ) => {
     const assignedClasses = [];
@@ -23,7 +23,7 @@ const cockpit = ( props ) => {
 
     return (
         // <div className={classes.Cockpit}>
-        // <Aux>
+        // <Auox>
         //     {/* <div> */}
         //         <h1>{ props.appTitle }</h1>
         //         <p className={assignedClasses.join(' ')}>This is really working</p>
@@ -32,7 +32,7 @@ const cockpit = ( props ) => {
         //             onClick={props.clicked}>Toogle Persons
         //         </button>
         //     {/* </div> */}
-        // </Aux>
+        // </Auox>
         <Fragment>
             <h1>{ props.appTitle }</h1>
             <p className={assignedClasses.join(' ')}>This is really working</p>
