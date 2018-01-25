@@ -3,6 +3,9 @@ import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+// import WithClass from '../hoc/WithClass';
+import Auox from '../hoc/Auox';
+import withClass2 from '../hoc/withClass2';
 
 class App extends PureComponent {
     constructor(props) {
@@ -96,7 +99,9 @@ class App extends PureComponent {
 
         return (
 
-            <div className={classes.App}>
+            // <div className={classes.App}>
+            // <WithClass classes={classes.App}>
+            <Auox>
                 <button onClick={() => {this.setState({showPersons: true})}}>Show Persons</button>
                 <Cockpit
                     appTitle={this.props.title}
@@ -104,10 +109,12 @@ class App extends PureComponent {
                     persons={this.state.persons}
                     clicked={this.togglePersonsHandler} />
                 {persons}
-            </div>
+            </Auox>
+            // </WithClass>
+            // </div>
         );
         //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Doeas this work now?'));
     }
 }
 
-export default App;
+export default withClass2(App, classes.App);
