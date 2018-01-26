@@ -25,6 +25,7 @@ const burger = (props) => {
     }
 
     /* ALTERNATIV WAY TO DO USING FOREACH */
+    
     // const transformedIngredients = [];
     // Object.keys(props.ingredients).forEach((v) => {
     //     for (let i = 0; i < props.ingredients[v]; ++i) 
