@@ -37,6 +37,12 @@ class BurgerBuilder extends Component {
             return sum + el;
          }, 0);
         this.setState( {purchasable: sum > 0} );
+
+        /* ALT WAY OF DOING IT */
+        
+        // const purchasable = Object.values(ingredients)
+        // .some(quantity => quantity > 0);
+        // this.setState( {purchasable: purchasable > 0} );
     }
 
     addIngredientHandler = (type) => {
