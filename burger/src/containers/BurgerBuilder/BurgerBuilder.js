@@ -46,6 +46,11 @@ class BurgerBuilder extends Component {
         // const purchasable = Object.values(updatedIngredients)
         // .some(quantity => quantity > 0);
         // this.setState( {purchasable: purchasable > 0} );
+
+        // const purchasable = Object.values(ingredients)
+        // .some(quantity => quantity > 0);
+        // this.setState({purchasable});
+        // purchasable is a boolean. true, means there is at least one ingredient.
     }
 
     addIngredientHandler = (type) => {
