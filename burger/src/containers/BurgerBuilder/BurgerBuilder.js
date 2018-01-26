@@ -28,6 +28,9 @@ class BurgerBuilder extends Component {
         purchasable: false
     }
 
+    /** ALT WAY OF DOING IT */
+    //updatePurchaseState (updatedIngredients) {    
+
     updatePurchaseState (ingredients) {
         const sum = Object.keys(ingredients)
         .map(igKey => {
@@ -40,7 +43,7 @@ class BurgerBuilder extends Component {
 
         /* ALT WAY OF DOING IT */
         
-        // const purchasable = Object.values(ingredients)
+        // const purchasable = Object.values(updatedIngredients)
         // .some(quantity => quantity > 0);
         // this.setState( {purchasable: purchasable > 0} );
     }
