@@ -32,7 +32,7 @@ const burger = (props) => {
     //         transformedIngredients.push(<BurgerIngredient type={v} key={v + i} />) 
     // });
     
-    console.log(transformedIngredients);
+    //console.log(transformedIngredients);
     return (
         <div className={classes.Burger}>
             <BurgerIngredient type="bread-top" />
