@@ -9,19 +9,19 @@ import './Blog.css';
 class Blog extends Component {
     state = {
         posts: [],
-        // selectedPostId: null 
-        selectedPost: null
+        selectedPostId: null 
+        //selectedPost: null
     }
 
-    // postSelectedHandler = (id) => {
-    //     this.setState({selectedPostId: id});
-    // }
+    postSelectedHandler = (id) => {
+        this.setState({selectedPostId: id});
+    }
 
     /** ALT WAY, CHANGE TO ALT IN FullPost.js TOO */
-    postSelectedHandler = (id) => {
-        let postToPass = this.state.posts.filter(post => post.id === id);
-        this.setState({selectedPost: postToPass});
-        }
+    // postSelectedHandler = (id) => {
+    //     let postToPass = this.state.posts.filter(post => post.id === id);
+    //     this.setState({selectedPost: postToPass});
+    //     }
 
     componentDidMount () {
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -53,8 +53,8 @@ class Blog extends Component {
                     {posts}
                 </section>
                 <section>
-                    {/* <FullPost id={this.state.selectedPostId}/> */}
-                    <FullPost selectedPost={this.state.selectedPost}/>
+                    <FullPost id={this.state.selectedPostId}/>
+                    {/* <FullPost selectedPost={this.state.selectedPost}/> */}
                 </section>
                 <section>
                     <NewPost />
