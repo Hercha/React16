@@ -164,6 +164,11 @@ class BurgerBuilder extends Component {
             orderSummary = <Spinner />;
         }
 
+        /** ANOTHER WAY OF DOING */
+        // if(this.state.loading || !this.state.ingredients ) {
+        //     orderSummary = <Spinner />;
+        //   }
+
         return (
             <Aux>
                 {/* <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}> */}
