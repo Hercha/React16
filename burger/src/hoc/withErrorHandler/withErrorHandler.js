@@ -21,7 +21,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
         // }
 
         /** ALTERNATIV WAY WITH SUCCESS MESSAGE */
-        componentWillMount () {
+        componentDidMount () {
             axios.interceptors.request.use(req => {
               this.setState({ error: null, success: null });
               return req;
