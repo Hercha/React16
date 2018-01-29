@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
@@ -20,9 +21,10 @@ class App extends Component {
     return (
       <div>
         <Layout>
-          <BurgerBuilder />
-          <Checkout />
-          {/* {this.state.show ? <BurgerBuilder /> : null} Testing if interceptors not take memory*/}
+          <Switch>
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/" exact component={BurgerBuilder} />
+          </Switch>
         </Layout>
       </div>
     );
