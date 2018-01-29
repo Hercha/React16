@@ -10,24 +10,24 @@ const withErrorHandler = (WrappedComponent, axios) => {
             success: null
         }
 
-        // componentDidMount () {
-        //     axios.interceptors.request.use(req => {
+        // componentWillMount () {
+        //     this.reqInterceptor = axios.interceptors.request.use(req => {
         //         this.setState({error: null});
         //         return req;
         //     });
-        //     axios.interceptors.response.use(res => res, error => {
+        //     this.resInterceptor =  axios.interceptors.response.use(res => res, error => {
         //         this.setState({error: error});
         //     });
         // }
 
         /** ALTERNATIV WAY WITH SUCCESS MESSAGE */
         componentWillMount () {
-            axios.interceptors.request.use(req => {
+            this.reqInterceptor = axios.interceptors.request.use(req => {
               this.setState({ error: null, success: null });
               return req;
             });
        
-            axios.interceptors.response.use(res => {
+            this.resInterceptor = axios.interceptors.response.use(res => {
               if(res.config.method !== 'get') {
                 this.setState({ success: 'Your request is already sent' });
               }
@@ -35,6 +35,12 @@ const withErrorHandler = (WrappedComponent, axios) => {
             }, error => {
               this.setState({ error: error });
             });
+          }
+
+          componentWillUnmount() {
+              // console.log('Will Unmount', this.reqInterceptor, this.resInterceptor); testing if interceptors not left in memory
+            axios.interceptors.request.eject(this.reqInterceptor);
+            axios.interceptors.response.eject(this.resInterceptor);
           }
 
         errorConfirmedHandler = () => {
