@@ -5,10 +5,11 @@ const cockpit = (props) => {
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
     // Http request... can be done
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       alert('Saved or fetched data to cloud!');
     }, 1000);
     return () => {
+      clearTimeout(timer);
       console.log('[Cockpit.js] cleanup work in useEffect');
     };
   }, []);// only to be in use when rendered first time, empty array,  not all time when rerendered
