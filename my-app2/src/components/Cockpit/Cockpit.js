@@ -5,7 +5,13 @@ const cockpit = (props) => {
   useEffect(() => {
     console.log('[Cockpit.js] useEffect');
     // Http request... can be done
-  });
+    setTimeout(() => {
+      alert('Saved or fetched data to cloud!');
+    }, 1000);
+  }, []);// only to be in use when rendered first time, empty array,  not all time when rerendered
+  //}, [props.persons]);// only to be in use when persons change, not all time when rerendered
+
+  // useEffect(); can use more then once
 
   const assignedClasses = [];
   let btnClass = '';
