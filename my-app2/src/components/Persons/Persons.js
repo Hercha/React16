@@ -7,6 +7,10 @@ class Persons extends Component {
     console.log('[Persons.js] getDerivedStateFromProps');
     return state;
   } */
+  //Old will be removed, gives warning, not supported in newer react
+/*   componentWillReceiveProps(props) {
+    console.log('[Persons.js] componentWillReceiveProps', props);
+  } */
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('[Persons.js] shouldComponentUpdate');
@@ -17,6 +21,11 @@ class Persons extends Component {
     console.log('[Persons.js] getSnapshotBeforeUpdate');
     return { message: 'Snapshot' };
   }
+  
+  // Old will be removed, gives warning, not supported in newer react
+/*   componentWillUpdate() {
+    console.log('[Persons.js] componentWillUpdatw');
+  } */
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     console.log('[Persons.js] componentDidUpdate');
