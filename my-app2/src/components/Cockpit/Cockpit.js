@@ -8,8 +8,18 @@ const cockpit = (props) => {
     setTimeout(() => {
       alert('Saved or fetched data to cloud!');
     }, 1000);
+    return () => {
+      console.log('[Cockpit.js] cleanup work in useEffect');
+    };
   }, []);// only to be in use when rendered first time, empty array,  not all time when rerendered
   //}, [props.persons]);// only to be in use when persons change, not all time when rerendered
+
+  useEffect(() => {
+    console.log('[Cockpit.js] 2nd useEffect');
+    return () => {
+      console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+    };
+  });
 
   // useEffect(); can use more then once
 
