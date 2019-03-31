@@ -54,7 +54,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
           });
 
           componentWillUnmount() {
-              // console.log('Will Unmount', this.reqInterceptor, this.resInterceptor); testing if interceptors not left in memory
+            //console.log('Will Unmount', this.reqInterceptor, this.resInterceptor); //testing if interceptors not left in memory
             axios.interceptors.request.eject(this.reqInterceptor);
             axios.interceptors.response.eject(this.resInterceptor);
           }

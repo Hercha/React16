@@ -7,21 +7,22 @@ import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 
 class App extends Component {
-  // Testing if interceptors not stays in memory
-  // state = {
-  //   show: true
-  // };
+  //Testing if interceptors not stays in memory
+/*     state = {
+     show: true
+   };
 
-  // componentDidMount () {
-  //   setTimeout(() => {
-  //     this.setState({show: false});
-  //   }, 5000);
-  // }
+   componentDidMount () {
+     setTimeout(() => {
+       this.setState({show: false});
+     }, 5000);
+   } */
 
   render() {
     return (
       <div>
         <Layout>
+          {/*{this.state.show ? <BurgerBuilder /> : null}//Testing if interceptors stays in memory*/}
           <Switch>
             <Route path="/checkout" component={Checkout} />
             <Route path="/orders" component={Orders} />
