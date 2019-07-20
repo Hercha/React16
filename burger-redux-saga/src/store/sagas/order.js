@@ -18,7 +18,7 @@ export function* fetchOrdersSaga(action) {
     const queryParams =
      '?auth=' + action.token + '&orderBy="userId"&equalTo="' + action.userId + '"';
     try {
-      const reponse = yield axios
+      const response = yield axios
       .get('/orders.json' + queryParams);
       const fetchedOrders = [];
       for (let key in response.data) {
@@ -27,7 +27,7 @@ export function* fetchOrdersSaga(action) {
             id: key
         });
       }
-      yield put(actions.fetchOrdersSuccess(fetchOrders));
+      yield put(actions.fetchOrdersSuccess(fetchedOrders));
     } catch (error) {
       yield put(actions.fetchOrdersFail(error));
     }
