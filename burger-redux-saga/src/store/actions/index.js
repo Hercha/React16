@@ -9,7 +9,10 @@ export {
 export { 
   purchaseBurger,
   purchaseInit,
-  fetchOrders 
+  fetchOrders,
+  purchaseBurgerStart,
+  purchaseBurgerFail,
+  purchaseBurgerSuccess 
 } from './order';
 
 export {
